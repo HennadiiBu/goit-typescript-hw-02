@@ -14,10 +14,18 @@ type User = {
   password: string;
 }
 
-function createOrUpdateUser(initialValues: User) {
-  // Оновлення користувача
+const initialValues: User = {
+  name: 'test',
+  surname: 'testing',
+  email: 'test@gmail.com',
+  password: 'test123',
 }
 
-createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
+function createOrUpdateUser(initialValues: User, update: Partial<User>): User {
+  // Оновлення користувача
+  return { ...initialValues, ...update }
+}
 
-export {};
+createOrUpdateUser(initialValues, { email: 'user@mail.com', password: 'password123' });
+
+export { };
