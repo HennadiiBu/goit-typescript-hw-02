@@ -1,12 +1,13 @@
 /*
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
+type Stat = 'open' | 'close';
 
 type Pages = {
   title: string;
   likes: number;
   accounts: Array<string>;
-  status: string;
+  status: Stat;
   details?: {
     createAt: Date
     updateAt: Date,
